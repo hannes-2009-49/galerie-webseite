@@ -1,0 +1,12 @@
+Titel: Eventname
+Datum: XX.XX.XXXX - XX.XX.XXXX
+Ort: Eventort
+Beschreibung: Beschreibung
+
+Bildbeschreibungen:
+img01.jpg = Natur
+img02.jpg = Stadt
+.
+.
+.
+

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="pics/bild01.png" type="image/png">
+    <link rel="stylesheet" href="style_datein/home.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CMH - Web App Fotogalerie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <div class="header">
+        <div class="logo">CMH</div>
+        <h1>Foto Web App von Claudia, Marit und Hannes</h1>
+      </div>
+      <section id="homeSection">
+        <div id="eventGrid" class="grid" aria-live="polite"></div>
+        <div id="logoutBtnViewer" class="back-btn logout-btn" aria-label="Logout" style="margin-top: 50px;">Logout</div>
+      </section>
+      <section id="viewerSection" class="viewer" aria-hidden="true">
+        <div class="viewer-header">
+          <div>
+            <h2 id="evTitle">Event</h2>
+            <div id="evMeta" class="meta">Datum · Ort</div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <div class="back-btn" id="backBtn" role="button" aria-label="Zurück zur Übersicht">Zurück zum Home-Menü</div>
+            <div id="logoutBtnViewer" class="back-btn logout-btn" aria-label="Logout">Logout</div>
+          </div>
+        </div>
+        <div id="slideshow" class="slideshow" aria-label="Slideshow">
+          <div class="top-controls">
+            <button id="playPauseBtn" class="btn-icon" title="Play / Pause">⏯</button>
+            <button id="openFsBtn" class="btn-icon" title="Vollbild öffnen">⛶</button>
+          </div>
+          <div class="ctrl left"><button id="prevBtn" class="btn-icon" title="Vorheriges">◀</button></div>
+          <div class="ctrl right"><button id="nextBtn" class="btn-icon" title="Nächstes">▶</button></div>
+        </div>
+        <div class="settings" aria-hidden="false">
+          <label for="speedRange">Sekunden / Bild</label>
+          <input id="speedRange" type="range" min="1" max="10" value="3" />
+          <label style="display:flex;align-items:center;gap:8px"><input id="shuffleChk" type="checkbox" /> Shuffle</label>
+        </div>
+        <div id="gallery" class="gallery" aria-label="Galerie"></div>
+      </section>
+      <div id="fsModal" class="fs-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="fs-inner" id="fsInner">
+          <button id="fsClose" class="fs-close" aria-label="Schließen Vollbild">✕</button>
+          <div class="fs-nav left"><button id="fsPrev" class="fs-btn" aria-label="Vorheriges">◀</button></div>
+          <div class="fs-nav right"><button id="fsNext" class="fs-btn" aria-label="Nächstes">▶</button></div>
+          <div id="fsSlides" class="fs-slides" aria-hidden="false"></div>
+        </div>
+      </div>
+    </div>
+    <script id="events-data" type="application/json" src="js_datein/bilder.json">
+      [
+          {
+            "slug": "berlin_2025",
+            "titel": "Berlin-Trip 2025",
+            "datum": "31.10.2025 - 02.11.2025",
+            "ort": "Berlin",
+            "bilder": [
+              { "datei": "berlin_2025_img01.jpg", "text": "Deutscher Dom" },
+              { "datei": "berlin_2025_img02.jpg", "text": "Ausstellung im Deutschen Dom" },
+              { "datei": "berlin_2025_img03.jpg", "text": "Ausstellung im Deutschen Dom" },
+              { "datei": "berlin_2025_img04.jpg", "text": "Cooles Selfie mit Claudia im Deutschen Dom" },
+              { "datei": "berlin_2025_img05.jpg", "text": "Berliner Fernsehturm" },
+              { "datei": "berlin_2025_img06.jpg", "text": "Bildermachen macht Spaß !!!" },
+              { "datei": "berlin_2025_img07.jpg", "text": "Selfie mit Fernsehturm" },
+              { "datei": "berlin_2025_img08.jpg", "text": "Die Spree am Abend" },
+              { "datei": "berlin_2025_img09.jpg", "text": "Museumsinsel" },
+              { "datei": "berlin_2025_img10.jpg", "text": "Berliner Dom mit Fernsehturm" },
+              { "datei": "berlin_2025_img11.jpg", "text": "Fernsehturm" },
+              { "datei": "berlin_2025_img12.jpg", "text": "Palast der Republik am Abend" },
+              { "datei": "berlin_2025_img13.jpg", "text": "Naturkundemuseum Berlin" },
+              { "datei": "berlin_2025_img14.jpg", "text": "Charite" },
+              { "datei": "berlin_2025_img15.jpg", "text": "Selfie vom Park-Inn Hotel" },
+              { "datei": "berlin_2025_img16.jpg", "text": "Selfie vom Park-Inn Hotel" },
+              { "datei": "berlin_2025_img17.jpg", "text": "Fernsehturm" },
+              { "datei": "berlin_2025_img18.jpg", "text": "Fernsehturm" },
+              { "datei": "berlin_2025_img19.jpg", "text": "Rotes Rathaus" },
+              { "datei": "berlin_2025_img20.jpg", "text": "Prime Time Theater" },
+              { "datei": "berlin_2025_img21.jpg", "text": "Nationalgalerie" },
+              { "datei": "berlin_2025_img22.jpg", "text": "Claudia macht Bild" }
+            ]
+          }
+      ]
+    </script>
+    <script src="js_datein/home.js"></script>
+  </body>
+</html>

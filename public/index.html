@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="pics/bild01.png" type="image/png">
+    <link rel="stylesheet" href="style_datein/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMH - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  </head>
+  <body>
+    <div class="login-page">
+      <div class="login-card">
+        <div class="logo">CMH</div>
+        <h1>Foto Web App - Login</h1>
+        <form class="form" id="loginForm">
+          <div>
+            <label for="user">Benutzername</label>
+            <input id="user" type="text" placeholder="">
+          </div>
+          <div>
+            <label for="pass">Passwort</label>
+            <input id="pass" type="password" placeholder="">
+          </div>
+          <button type="submit">Einloggen</button>
+        </form>
+      </div>
+    </div>
+    <script src="js_datein/index.js"></script>
+  </body>
+</html>
